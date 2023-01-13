@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.qualcomm.snapdragon.spaces": {
-      "version": "file:/Users/bryantwood/Documents/Development/REPO-010/SnapdragonSpaces_Package_0_9_0.tgz",
+      "version": "file:../../SnapdragonSpaces_Package_0_9_0.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
