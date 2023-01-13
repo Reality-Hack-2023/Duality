@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.qualcomm.snapdragon.spaces": {
-      "version": "file:/Users/bryantwood/Downloads/Snapdragon_Spaces_SDK_for_Unity_0_9_0/Unity Package/SnapdragonSpaces_Package_0_9_0.tgz",
+      "version": "file:/Users/bryantwood/Documents/Development/REPO-010/SnapdragonSpaces_Package_0_9_0.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
