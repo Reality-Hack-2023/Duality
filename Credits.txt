@@ -2,5 +2,8 @@
 Magic VFX – Ice (FREE) by Swift Games in Unity Assets Store
 https://assetstore.unity.com/packages/vfx/particles/spells/magic-vfx-ice-free-170242#reviews
 
+Bézier Path Creator by Sebastian Lague in Unity Assets Store
+https://assetstore.unity.com/packages/tools/utilities/b-zier-path-creator-136082
+
 === Music ===
 <Please Calm My Mind> Music by <a href="https://pixabay.com/users/lesfm-22579021/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=125566">Lesfm</a> from <a href="https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=125566">Pixabay</a>
