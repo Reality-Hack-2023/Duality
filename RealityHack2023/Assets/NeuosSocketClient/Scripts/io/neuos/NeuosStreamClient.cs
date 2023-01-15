@@ -61,7 +61,8 @@ namespace io.neuos
         private byte[] m_recBuffer = new byte[1024];
         private byte[] m_keepAlive = new byte[1];
         private bool m_blockingState;
-                
+
+
         /// <summary>
         /// Establishes a socket connection to the server
         /// API Key must be set prior or authentication will fail
