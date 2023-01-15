@@ -83,12 +83,12 @@ public class PathController : MonoBehaviour
             {
                 if (isLeft)
                 {
-                    xPos += Random.Range(0.5f, xVariance);
+                    xPos += Random.Range(0f, xVariance);
                     yPos += Random.Range(0f, yVariance);
                 }
                 else
                 {
-                    xPos -= Random.Range(0.5f, xVariance);
+                    xPos -= Random.Range(0f, xVariance);
                     yPos -= Random.Range(0f, yVariance);
                 }
             }
