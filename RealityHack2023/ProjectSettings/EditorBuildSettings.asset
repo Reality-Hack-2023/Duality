@@ -13,7 +13,7 @@ EditorBuildSettings:
     path: Assets/Samples/Snapdragon Spaces/0.9.0/Core Samples/Scenes/Anchor Sample/Anchor
       Sample.unity
     guid: a6e56af4472621b45b91380052443a24
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainScene.unity
     guid: 7f6052019a1504ac09ac3e728b12dd65
   - enabled: 0
@@ -35,6 +35,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Scene_RHlogo.unity
     guid: 069957e91d3b1ef469cdb80ee2d7383b
+  - enabled: 1
+    path: Assets/Scenes/WallDecalScene.unity
+    guid: cfca62c3e587dd245b915ca3907900fd
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 5d0bf233bda4247428bf924eaada5bd4, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 070531b3be92c41b1b6427c527c70e1f, type: 2}
