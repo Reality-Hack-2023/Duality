@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.qualcomm.qcht.unity.core": {
-      "version": "file:C:/GameDev/REPO-010/QCHT_Core_Package_3_2_5.tgz",
+      "version": "file:../../QCHT_Core_Package_3_2_5.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
@@ -9,7 +9,7 @@
       }
     },
     "com.qualcomm.qcht.unity.interactions": {
-      "version": "file:C:/GameDev/REPO-010/QCHT_Interactions_Package_3_4_2.tgz",
+      "version": "file:../../QCHT_Interactions_Package_3_4_2.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {

@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "com.qualcomm.qcht.unity.core": "file:C:/GameDev/REPO-010/QCHT_Core_Package_3_2_5.tgz",
-    "com.qualcomm.qcht.unity.interactions": "file:C:/GameDev/REPO-010/QCHT_Interactions_Package_3_4_2.tgz",
+    "com.qualcomm.qcht.unity.core": "file:../../QCHT_Core_Package_3_2_5.tgz",
+    "com.qualcomm.qcht.unity.interactions": "file:../../QCHT_Interactions_Package_3_4_2.tgz",
     "com.qualcomm.snapdragon.spaces": "file:../../SnapdragonSpaces_Package_0_9_0.tgz",
     "com.unity.collab-proxy": "1.17.7",
     "com.unity.ide.rider": "3.0.17",
