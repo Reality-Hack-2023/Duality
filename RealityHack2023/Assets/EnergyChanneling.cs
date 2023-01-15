@@ -81,7 +81,7 @@ public class EnergyChanneling : MonoBehaviour
         FindObjectOfType<SpacesHandManager>().handsChanged += HandleHandMovement;
 
 
-        StartCoroutine(StartScript()); 
+        //StartCoroutine(StartScript()); 
 
 
 
@@ -111,7 +111,7 @@ public class EnergyChanneling : MonoBehaviour
 
 
 
-    IEnumerator CheckForGaze(string handType)
+    public IEnumerator CheckForGaze(string handType)
     {
         bool found = false;
         
@@ -178,7 +178,7 @@ public class EnergyChanneling : MonoBehaviour
     IEnumerator AccumulateParticles(string key)
     {
 
-        StartCoroutine(CheckForRelease());
+        //(CheckForRelease());
 
 
         while (isAccumulatingLeft)
@@ -222,7 +222,7 @@ public class EnergyChanneling : MonoBehaviour
 
 
         
-        IEnumerator CheckForRelease()
+        public IEnumerator CheckForRelease()
         {
             
             bool isReleased = false;
