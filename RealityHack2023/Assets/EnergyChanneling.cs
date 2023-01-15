@@ -44,7 +44,7 @@ public class EnergyChanneling : MonoBehaviour
     List<GameObject> particlesSystems = new List<GameObject>();
     StringBuilder arrayBuilder = new StringBuilder();
 
-
+    //FROM ARCTOP CODE, just how they handle updates from the data stream
     public void OnArrayValueChanged(string key, float[] value)
     {
         // here we store the value into our dictionary
@@ -60,11 +60,18 @@ public class EnergyChanneling : MonoBehaviour
         //UpdateUI();
     }
 
+    public void OnNeuroValueChanged(string key, float value)
+    {
+        // here we store the value into our dictionary
+        neuroFields[key] = value.ToString();
+    }
+    //END FROMARCTOP
+
     // Start is called before the first frame update
     void Start()
     {
         
-
+        //palms that you look at to trigger behavior
         leftHandTriggerZone = Instantiate(palmTriggerPrefab, this.transform.position, this.transform.rotation);
         rightHandTriggerZone = Instantiate(palmTriggerPrefabRight, this.transform.position + Vector3.up*3, this.transform.rotation);
 
@@ -102,14 +109,7 @@ public class EnergyChanneling : MonoBehaviour
     }
 
 
-    public void OnNeuroValueChanged(string key, float value)
-    {
-        // here we store the value into our dictionary
-        neuroFields[key] = value.ToString();
 
-        
-        //update 'contribution' state
-    }
 
     IEnumerator CheckForGaze(string handType)
     {
@@ -135,13 +135,14 @@ public class EnergyChanneling : MonoBehaviour
 
                     if(handType == "LeftHandRaycast")
                     {
+                        rayHitText.text = "Accumulating";
                         isAccumulatingLeft = true;
-                        accumulateEnergy = StartCoroutine(AccumulateParticlesLeft());
+                        accumulateEnergy = StartCoroutine(AccumulateParticles("enjoyment"));
                     }
                     if (handType == "RightHandRaycast")
                     {
-                        isAccumulatingLeft = true;
-                        accumulateEnergy = StartCoroutine(AccumulateParticlesLeft());
+                        isAccumulatingRight = true;
+                        accumulateEnergy = StartCoroutine(AccumulateParticles("focus"));
                     }
                     found = true;
                 }
@@ -164,13 +165,18 @@ public class EnergyChanneling : MonoBehaviour
 
         rayHitText.text = "What is in your left hand???";
         neuroDataText.text = "What is in your left hand ??";
+
+
         gazeCheck = StartCoroutine(CheckForGaze("LeftHandRaycast"));
+
+        //wait for release
+
+        //sart right
 
     }
 
-    IEnumerator AccumulateParticlesLeft()
+    IEnumerator AccumulateParticles(string key)
     {
-        //begin 'check for release'
 
         StartCoroutine(CheckForRelease());
 
@@ -181,36 +187,29 @@ public class EnergyChanneling : MonoBehaviour
 
             //display neural data
             builder.Clear();
-            // iterate over the dictionary
             foreach (var kvp in neuroFields)
             {
-                // add each key value pair as a line to the string builder
                 builder.AppendLine($"{kvp.Key} : {kvp.Value}");
-
-                //placeholder instatiation
-
-
-                //MainModule a = particles.GetComponent<ParticleSystem>().main;
-                /*                if(int.Parse(neuroFields["enjoyment"]) != -1) {
-                                    a.startSpeedMultiplier = float.Parse(neuroFields["enjoyment"]);
-                                }*/
-                ;
-
             }
-            // update the UI text value with the value of the new string builder
+
             neuroDataText.text = builder.ToString();
 
+            //new particle system
             GameObject particles = Instantiate(LeftHandParticleSystemPrefab, Vector3.zero, leftHandTriggerZone.transform.rotation);
+            
+           
 
-//            GameObject particles = Instantiate(LeftHandParticleSystemPrefab, FindObjectOfType<SpacesHandManager>().LeftHand.Joints[0].Pose.position, FindObjectOfType<SpacesHandManager>().LeftHand.transform.rotation);
-
-/*            MainModule a = particles.GetComponentInChildren<ParticleSystem>().main;
-            if (int.Parse(neuroFields["enjoyment"]) != -1)
+            if ((int) float.Parse(neuroFields[key]) != -1)
             {
-                a.startColor = new Color(float.Parse(neuroFields["enjoyment"]), 0.5f, 0.5f);
-                //rayHitText.text = neuroFields.Keys.ToString();
 
-            }*/
+
+
+                MainModule mainParticle = particles.GetComponentInChildren<ParticleSystem>().main;
+                mainParticle.startColor = new Color(float.Parse(neuroFields["enjoyment"]) / 100.0f, 0.5f, 0.5f);
+
+
+            }
+
 
 
             particles.GetComponent<PathController>().Initiate(leftHandTriggerZone.transform, particleTarget.transform);
