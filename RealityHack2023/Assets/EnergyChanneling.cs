@@ -202,11 +202,23 @@ public class EnergyChanneling : MonoBehaviour
             if ((int) float.Parse(neuroFields[key]) != -1)
             {
 
-
-
                 MainModule mainParticle = particles.GetComponentInChildren<ParticleSystem>().main;
-                mainParticle.startColor = new Color(float.Parse(neuroFields["enjoyment"]) / 100.0f, 0.5f, 0.5f);
+                Color startColor = new Color(float.Parse(neuroFields[key]) / 100.0f, 0.5f, 0.5f);
+                //mainParticle.startColor = startColor;
 
+                switch (key)
+                {
+                    case "enjoyment":
+                        ParticleManager.Instance.FocusColor = startColor;
+                        break;
+                    case "focus":
+                        ParticleManager.Instance.JoyColor = startColor;
+                        break;
+                    default:
+                        break;
+                }
+
+                
 
             }
 
