@@ -10,13 +10,24 @@ public class GameControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        createParticle();
+        StartCoroutine(SpawnParticles());
+    }
+
+    void createParticle()
+    {
         GameObject particlePath = Instantiate(prefab, Vector3.zero, Quaternion.identity);
         particlePath.GetComponent<PathController>().Initiate(StartLocation, EndLocation);
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator SpawnParticles()
     {
+        while (true)
+        {
+            createParticle();
+            yield return new WaitForSeconds(1f);
+        }
         
     }
+
 }
