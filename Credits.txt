@@ -22,3 +22,5 @@ https://assetstore.unity.com/packages/audio/sound-fx/free-cinematic-sound-effect
 
 VertexTextAnimationDemo by Scott Steffes at https://github.com/markv12/VertexTextAnimationDemo (based on Batbarian and Kingdom of Night)
 
+Disabling AR plane detection and Changing AR plane texture in Unity, by vionix, https://vionixstudio.com/2022/08/08/disabling-ar-plane-detection/
+
