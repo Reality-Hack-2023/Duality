@@ -125,6 +125,9 @@ public class PathController : MonoBehaviour
         }
 
         GenerateCurve();
+        ParticleSystem part = GetComponentInChildren<ParticleSystem>();
+        part.transform.position = waypoints[0];
+        part.Play();
     }
 
     public void SetParticleMaterial(Material material)

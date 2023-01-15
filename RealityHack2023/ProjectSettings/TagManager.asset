@@ -7,6 +7,7 @@ TagManager:
   - LeftHandRaycast
   - RightHandRaycast
   - Particle
+  - LeftHand
   layers:
   - Default
   - TransparentFX
