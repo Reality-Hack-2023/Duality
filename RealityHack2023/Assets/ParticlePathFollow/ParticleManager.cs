@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 public class ParticleManager : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class ParticleManager : MonoBehaviour
     public static ParticleManager Instance;
 
     private List<ParticleSystem> allParticles;
+
+    public Color JoyColor;
+    public Color FocusColor;
 
     private void Awake()
     {
@@ -51,3 +55,4 @@ public class ParticleManager : MonoBehaviour
         }
     }
 }
+

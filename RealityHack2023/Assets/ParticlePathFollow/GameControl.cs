@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class GameControl : MonoBehaviour
 {
-    public GameObject prefab;
-    public Transform StartLocation, EndLocation;
+    public GameObject prefabRight, prefabLeft;
+    public Transform LeftStart, RightStart, EndLocation;
 
     // Start is called before the first frame update
     void Start()
     {
-        createParticle();
+        //createParticle();
         StartCoroutine(SpawnParticles());
     }
 
     void createParticle()
     {
-        GameObject particlePath = Instantiate(prefab, Vector3.zero, Quaternion.identity);
-        particlePath.GetComponent<PathController>().Initiate(StartLocation, EndLocation);
+        GameObject particlePath = Instantiate(prefabLeft, Vector3.zero, Quaternion.identity);
+        particlePath.GetComponent<PathController>().Initiate(LeftStart, EndLocation);
+
+        GameObject particlePath2 = Instantiate(prefabRight, Vector3.zero, Quaternion.identity);
+        particlePath2.GetComponent<PathController>().Initiate(RightStart, EndLocation);
     }
 
     IEnumerator SpawnParticles()
