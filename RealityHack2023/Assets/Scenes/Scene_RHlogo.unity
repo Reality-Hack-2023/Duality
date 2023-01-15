@@ -21586,7 +21586,7 @@ GameObject:
   - component: {fileID: 980150968}
   - component: {fileID: 980150967}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: CanvasLatest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
