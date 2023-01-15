@@ -8,6 +8,7 @@ public class Scripting : MonoBehaviour
 
     public TMPro.TextMeshProUGUI dialogue;
 
+    public AudioProcessing audioClipProccessing;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,8 @@ public class Scripting : MonoBehaviour
     IEnumerator StartScript()
     {
         yield return new WaitForSeconds(1);
+
+        audioClipProccessing.PlayClip(0);
 
         EnergyChanneling energyChannelingModule = energyChanneling.GetComponent<EnergyChanneling>();
 

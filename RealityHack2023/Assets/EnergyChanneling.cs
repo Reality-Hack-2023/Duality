@@ -159,7 +159,7 @@ public class EnergyChanneling : MonoBehaviour
 
 
 
-    IEnumerator StartScript()
+/*    IEnumerator StartScript()
     {
         yield return new WaitForSeconds(3);
 
@@ -173,7 +173,7 @@ public class EnergyChanneling : MonoBehaviour
 
         //sart right
 
-    }
+    }*/
 
     IEnumerator AccumulateParticles(string key)
     {
