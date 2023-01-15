@@ -1,5 +1,21 @@
 {
   "dependencies": {
+    "com.qualcomm.qcht.unity.core": {
+      "version": "file:C:/GameDev/REPO-010/QCHT_Core_Package_3_2_5.tgz",
+      "depth": 0,
+      "source": "local-tarball",
+      "dependencies": {
+        "com.unity.inputsystem": "1.0.2"
+      }
+    },
+    "com.qualcomm.qcht.unity.interactions": {
+      "version": "file:C:/GameDev/REPO-010/QCHT_Interactions_Package_3_4_2.tgz",
+      "depth": 0,
+      "source": "local-tarball",
+      "dependencies": {
+        "com.qualcomm.qcht.unity.core": "3.1.0"
+      }
+    },
     "com.qualcomm.snapdragon.spaces": {
       "version": "file:../../SnapdragonSpaces_Package_0_9_0.tgz",
       "depth": 0,
