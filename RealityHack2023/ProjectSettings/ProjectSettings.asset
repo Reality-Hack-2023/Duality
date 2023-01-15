@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: TeamDuality
-  productName: AndrewHeck
+  companyName: LETITGrOw
+  productName: scenetest11audio
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -135,9 +135,7 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleVersion: 0.1
-  preloadedAssets:
-  - {fileID: -2799210987782937119, guid: 070531b3be92c41b1b6427c527c70e1f, type: 2}
-  - {fileID: -4264657605275106697, guid: 5d0bf233bda4247428bf924eaada5bd4, type: 2}
+  preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -156,7 +154,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.TeamDuality.AndrewHeck
+    Android: com.LETITGrOw.scenetest11audio
     Standalone: com.TeamDuality.RealityHeck
   buildNumber:
     Standalone: 0
