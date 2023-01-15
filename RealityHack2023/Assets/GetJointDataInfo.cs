@@ -11,9 +11,9 @@ public class GetJointDataInfo : MonoBehaviour
     public SpacesHandManager _spacesHandManager;   // Start is called before the first frame update
     void Start()
     {
-        //_spacesHandManager = FindObjectOfType<SpacesHandManager>();
+        _spacesHandManager = FindObjectOfType<SpacesHandManager>();
 
-        StartCoroutine(SampleJoints());
+        //StartCoroutine(SampleJoints());
     }
 
     // Update is called once per frame

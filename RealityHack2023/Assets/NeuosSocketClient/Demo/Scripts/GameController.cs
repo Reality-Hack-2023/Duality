@@ -36,6 +36,12 @@ public class GameController : MonoBehaviour
     /// <summary>
     /// Method to call that will connect to the Neuos Stream server
     /// </summary>
+    /// 
+
+    private void Start()
+    {
+        ConnectToServer();
+    }
     public void ConnectToServer()
     {
         if (!neuosStreamClient.IsConnected)
@@ -83,6 +89,8 @@ public class GameController : MonoBehaviour
         // here we store the value into our dictionary
         fields[key] = value.ToString();
         UpdateUI();
+
+        //update 'contribution' state
     }
     /// <summary>
     /// Callback for when the Neuos Stream server sends an updated value
