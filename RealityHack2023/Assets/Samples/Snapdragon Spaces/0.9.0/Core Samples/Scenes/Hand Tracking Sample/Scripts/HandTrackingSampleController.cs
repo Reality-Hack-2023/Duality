@@ -71,7 +71,7 @@ namespace Qualcomm.Snapdragon.Spaces.Samples
 
         public override void Update() {
             base.Update();
-            UpdateMirroredPlayer();
+           // UpdateMirroredPlayer();
         }
 
         private void UpdateGesturesUI(SpacesHandsChangedEventArgs args) {
@@ -96,7 +96,7 @@ namespace Qualcomm.Snapdragon.Spaces.Samples
             }
         }
 
-        private void UpdateMirroredPlayer() {
+/*        private void UpdateMirroredPlayer() {
             MirroredPlayer.transform.position = GetMirroredPosition(_mainCameraTransform.transform.position);
 
             var reflectedForward = Vector3.Reflect(_mainCameraTransform.transform.rotation * Vector3.forward, Mirror.transform.forward);
@@ -106,7 +106,7 @@ namespace Qualcomm.Snapdragon.Spaces.Samples
             UpdateMirroredHand(true);
             UpdateMirroredHand(false);
         }
-
+*/
         private void UpdateMirroredHand(bool leftHand) {
             var joints = leftHand ? _leftMirroredHandJoints : _rightMirroredHandJoints;
             for (var i = 0; i < _leftMirroredHandJoints.Length; i++) {
