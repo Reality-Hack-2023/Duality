@@ -4817,6 +4817,7 @@ GameObject:
   - component: {fileID: 1602669450697386587}
   - component: {fileID: 6013088161345862589}
   - component: {fileID: 900694968632965227}
+  - component: {fileID: 7295440425800790872}
   m_Layer: 0
   m_Name: Particle
   m_TagString: Untagged
@@ -5090,7 +5091,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.1
+      scalar: 0.08
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -9634,6 +9635,18 @@ MonoBehaviour:
   pathCreator: {fileID: 5740987590528998993}
   endOfPathInstruction: 0
   speed: 2
+--- !u!114 &7295440425800790872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3390245914239112678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c9fd4ccf9fa4f7eb6e7dd50103c747, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4180550517054904335
 GameObject:
   m_ObjectHideFlags: 0
@@ -9651,7 +9664,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &934878991558667182
 Transform:
   m_ObjectHideFlags: 0
@@ -9737,7 +9750,7 @@ MonoBehaviour:
       - 0
       globalNormalsAngle: 0
       flipNormals: 0
-    vertexPathUpToDate: 0
+    vertexPathUpToDate: 1
     vertexPathMaxAngleError: 0.3
     vertexPathMinVertexSpacing: 0.01
     showTransformTool: 1
@@ -10277,7 +10290,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.1
+      scalar: 0.08
       minScalar: 1
       maxCurve:
         serializedVersion: 2
