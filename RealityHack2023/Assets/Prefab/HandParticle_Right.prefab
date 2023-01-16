@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 4501673848051917433}
   - component: {fileID: 4501673848051826244}
   - component: {fileID: 4501673848051826266}
+  - component: {fileID: 2690367474122752761}
   m_Layer: 0
-  m_Name: HandParticle
+  m_Name: HandParticle_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4814,6 +4815,18 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &2690367474122752761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4501673848051826265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a94a015841844af9a2b2374427bb031, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4501673848051826267
 GameObject:
   m_ObjectHideFlags: 0
