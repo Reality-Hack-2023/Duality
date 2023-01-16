@@ -7663,6 +7663,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPosition: {fileID: 1472240953}
+  JoyColor: {r: 0, g: 0, b: 0, a: 0}
+  FocusColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &407259659
 Transform:
   m_ObjectHideFlags: 0
@@ -21184,13 +21186,13 @@ MonoBehaviour:
   palmTriggerPrefabRight: {fileID: 8517251520401603391, guid: dc906d23347e155468c32977023d83dd, type: 3}
   leftHandTriggerZone: {fileID: 0}
   rightHandTriggerZone: {fileID: 0}
+  leftSpawn: {fileID: 6348851677084063193}
+  rightSpawn: {fileID: 2239434483355350996}
   rayHitText: {fileID: 1300570097}
   neuroDataText: {fileID: 655726315}
   distanceFromLeftHandToHeadText: {fileID: 1474523210}
   headLocation: {fileID: 83868173}
   particleTarget: {fileID: 1472240953}
-  leftHandSpawnPoint: {fileID: 6348851677084063193}
-  rightHandSpawnPoint: {fileID: 2239434483355350996}
   energyReleased:
     m_PersistentCalls:
       m_Calls: []
@@ -53938,7 +53940,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1529822809
 Transform:
   m_ObjectHideFlags: 0
