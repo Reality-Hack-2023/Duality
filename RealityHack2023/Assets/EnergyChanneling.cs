@@ -36,9 +36,9 @@ public class EnergyChanneling : MonoBehaviour
     public Coroutine accumulateEnergyLeft;
     public Coroutine accumulateEnergyRight;
 
-    public bool isAccumulating;
-    public bool isAccumulatingLeft;
-    public bool isAccumulatingRight;
+    public bool isAccumulating = true;
+    public bool isAccumulatingLeft = true;
+    public bool isAccumulatingRight = true;
 
 
     public GameObject LeftHandParticleSystemPrefab;
@@ -89,8 +89,13 @@ public class EnergyChanneling : MonoBehaviour
         FindObjectOfType<SpacesHandManager>().handsChanged += HandleHandMovement;
 
 
-        //StartCoroutine(StartScript()); 
+        isAccumulatingLeft = true;
+        isAccumulatingRight = true;
+        isAccumulating = true;
 
+        //StartCoroutine(StartScript()); 
+        accumulateEnergyLeft = StartCoroutine(AccumulateParticles("enjoyment"));
+        accumulateEnergyRight = StartCoroutine(AccumulateParticles("focus"));
 
 
     }
@@ -219,7 +224,7 @@ public class EnergyChanneling : MonoBehaviour
             {
                  particles = Instantiate(RightHandParticleSystemPrefab, Vector3.zero, Quaternion.identity);
 
-                 particles.GetComponentInChildren<PathCreation.Examples.PathFollower>().Initiate(rightSpawn.transform, particleTarget.transform);
+                 particles.GetComponentInChildren<PathController>().Initiate(rightSpawn.transform, particleTarget.transform);
 
                  particlesSystems.Add(particles);
 
@@ -244,10 +249,10 @@ public class EnergyChanneling : MonoBehaviour
                 switch (key)
                 {
                     case "enjoyment":
-                        ParticleManager.Instance.FocusColor = startColor;
+                        //ParticleManager.Instance.FocusColor = startColor;
                         break;
                     case "focus":
-                        ParticleManager.Instance.JoyColor = startColor;
+                        //ParticleManager.Instance.JoyColor = startColor;
                         break;
                     default:
                         break;
@@ -283,12 +288,12 @@ public class EnergyChanneling : MonoBehaviour
 
                 if (distance > distanceThreshold)
                 {
-                    StopCoroutine(accumulateEnergyLeft);
-                    StopCoroutine(accumulateEnergyRight);
-                    isAccumulatingLeft = false;
-                    isAccumulatingRight = false;
+                    //StopCoroutine(accumulateEnergyLeft);
+                    //StopCoroutine(accumulateEnergyRight);
+                    //isAccumulatingLeft = false;
+                    //isAccumulatingRight = false;
 
-                    isAccumulating = false;
+                    //isAccumulating = false;
 
                     foreach(GameObject p in particlesSystems)
                     {

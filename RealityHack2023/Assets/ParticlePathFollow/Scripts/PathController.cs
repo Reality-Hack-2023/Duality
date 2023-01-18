@@ -115,7 +115,7 @@ public class PathController : MonoBehaviour
         //Add to particle manager
         ParticleManager.Instance.AddNewParticleSystem(gameObject);
 
-        Debug.Log("Setting up particle system");
+//        Debug.Log("Setting up particle system");
         SetStartPosition(startPosition);
         SetEndPosition(endPosition);
 
