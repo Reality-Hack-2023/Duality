@@ -15,7 +15,7 @@ public class ColorSet_Focus : MonoBehaviour
     void Update()
     {
         ParticleSystem[] allParticleSystems = GetComponentsInChildren<ParticleSystem>();
-        Debug.Log(allParticleSystems.Length);
+        //Debug.Log(allParticleSystems.Length);
 
         foreach (ParticleSystem system in allParticleSystems)
         {

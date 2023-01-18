@@ -1,3 +1,4 @@
+using PathCreation;
 using Qualcomm.Snapdragon.Spaces;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,6 +17,9 @@ public class EnergyChanneling : MonoBehaviour
     public GameObject leftHandTriggerZone;
     public GameObject rightHandTriggerZone;
 
+    public Transform leftSpawn;
+    public Transform rightSpawn;
+
 
     public TMPro.TextMeshProUGUI rayHitText;
     public TMPro.TextMeshProUGUI neuroDataText;
@@ -29,10 +33,12 @@ public class EnergyChanneling : MonoBehaviour
     public UnityEvent energyReleased = new UnityEvent();
 
     public Coroutine gazeCheck;
-    public Coroutine accumulateEnergy;
+    public Coroutine accumulateEnergyLeft;
+    public Coroutine accumulateEnergyRight;
 
-    public bool isAccumulatingLeft;
-    public bool isAccumulatingRight;
+    public bool isAccumulating = true;
+    public bool isAccumulatingLeft = true;
+    public bool isAccumulatingRight = true;
 
 
     public GameObject LeftHandParticleSystemPrefab;
@@ -70,6 +76,8 @@ public class EnergyChanneling : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        OnNeuroValueChanged("enjoyment", 50f);
+        OnNeuroValueChanged("focus", 50f);
         
         //palms that you look at to trigger behavior
         leftHandTriggerZone = Instantiate(palmTriggerPrefab, this.transform.position, this.transform.rotation);
@@ -81,8 +89,13 @@ public class EnergyChanneling : MonoBehaviour
         FindObjectOfType<SpacesHandManager>().handsChanged += HandleHandMovement;
 
 
-        //StartCoroutine(StartScript()); 
+        isAccumulatingLeft = true;
+        isAccumulatingRight = true;
+        isAccumulating = true;
 
+        //StartCoroutine(StartScript()); 
+        accumulateEnergyLeft = StartCoroutine(AccumulateParticles("enjoyment"));
+        accumulateEnergyRight = StartCoroutine(AccumulateParticles("focus"));
 
 
     }
@@ -137,12 +150,14 @@ public class EnergyChanneling : MonoBehaviour
                     {
                         rayHitText.text = "Accumulating";
                         isAccumulatingLeft = true;
-                        accumulateEnergy = StartCoroutine(AccumulateParticles("enjoyment"));
+                        isAccumulating = true;
+                        accumulateEnergyLeft = StartCoroutine(AccumulateParticles("enjoyment"));
                     }
                     if (handType == "RightHandRaycast")
                     {
                         isAccumulatingRight = true;
-                        accumulateEnergy = StartCoroutine(AccumulateParticles("focus"));
+                        isAccumulating = true;
+                        accumulateEnergyRight = StartCoroutine(AccumulateParticles("focus"));
                     }
                     found = true;
                 }
@@ -181,7 +196,7 @@ public class EnergyChanneling : MonoBehaviour
         //(CheckForRelease());
 
 
-        while (isAccumulatingLeft)
+        while (isAccumulating)
         {
             yield return new WaitForSeconds(0.25f);
 
@@ -194,13 +209,38 @@ public class EnergyChanneling : MonoBehaviour
 
             neuroDataText.text = builder.ToString();
 
+            GameObject particles = null;
+
+            if(key == "enjoyment")
+            {
+                 particles = Instantiate(LeftHandParticleSystemPrefab, Vector3.zero, Quaternion.identity);
+
+                 particles.GetComponentInChildren<PathController>().Initiate(leftSpawn.transform, particleTarget.transform);  //???
+
+                 particlesSystems.Add(particles);
+
+            }
+            else if(key == "focus")
+            {
+                 particles = Instantiate(RightHandParticleSystemPrefab, Vector3.zero, Quaternion.identity);
+
+                 particles.GetComponentInChildren<PathController>().Initiate(rightSpawn.transform, particleTarget.transform);
+
+                 particlesSystems.Add(particles);
+
+
+            }
             //new particle system
-            GameObject particles = Instantiate(LeftHandParticleSystemPrefab, Vector3.zero, leftHandTriggerZone.transform.rotation);
-            
-           
+
+
+
 
             if ((int) float.Parse(neuroFields[key]) != -1)
             {
+
+
+
+
 
                 MainModule mainParticle = particles.GetComponentInChildren<ParticleSystem>().main;
                 Color startColor = new Color(float.Parse(neuroFields[key]) / 100.0f, 0.5f, 0.5f);
@@ -209,10 +249,10 @@ public class EnergyChanneling : MonoBehaviour
                 switch (key)
                 {
                     case "enjoyment":
-                        ParticleManager.Instance.FocusColor = startColor;
+                        //ParticleManager.Instance.FocusColor = startColor;
                         break;
                     case "focus":
-                        ParticleManager.Instance.JoyColor = startColor;
+                        //ParticleManager.Instance.JoyColor = startColor;
                         break;
                     default:
                         break;
@@ -223,10 +263,6 @@ public class EnergyChanneling : MonoBehaviour
             }
 
 
-
-            particles.GetComponent<PathController>().Initiate(leftHandTriggerZone.transform, particleTarget.transform);
-
-            particlesSystems.Add(particles);
 
 
         }
@@ -252,8 +288,12 @@ public class EnergyChanneling : MonoBehaviour
 
                 if (distance > distanceThreshold)
                 {
-                    StopCoroutine(accumulateEnergy);
-                    isAccumulatingLeft = false;
+                    //StopCoroutine(accumulateEnergyLeft);
+                    //StopCoroutine(accumulateEnergyRight);
+                    //isAccumulatingLeft = false;
+                    //isAccumulatingRight = false;
+
+                    //isAccumulating = false;
 
                     foreach(GameObject p in particlesSystems)
                     {

@@ -22,7 +22,7 @@ public class ColorSet_Joy : MonoBehaviour
             
             MainModule mainParticle = system.GetComponentInChildren<ParticleSystem>().main;
             mainParticle.startColor = ParticleManager.Instance.JoyColor;
-            Debug.Log($"Start Color changed to {ParticleManager.Instance.JoyColor}");
+            //Debug.Log($"Start Color changed to {ParticleManager.Instance.JoyColor}");
             //Debug.Log($"")
         }
     }

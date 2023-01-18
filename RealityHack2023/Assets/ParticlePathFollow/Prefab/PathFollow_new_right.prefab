@@ -267,7 +267,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.1
       minScalar: 0.5
       maxCurve:
         serializedVersion: 2
@@ -4774,7 +4774,7 @@ GameObject:
   - component: {fileID: 5976355328796839926}
   - component: {fileID: 5976355328796839925}
   - component: {fileID: 5988847693600700660}
-  - component: {fileID: 385492329362638716}
+  - component: {fileID: 1015752719971199618}
   m_Layer: 0
   m_Name: PathFollow_new_right
   m_TagString: Untagged
@@ -4862,7 +4862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a94a015841844af9a2b2374427bb031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &385492329362638716
+--- !u!114 &1015752719971199618
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4874,9 +4874,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf5cc02cf941a48a583e79b86c2fa1a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurveSegments: 3
-  xVariance: 0.2
-  yVariance: 0.2
+  CurveSegments: 5
+  xVariance: 0.15
+  yVariance: 0.15
   isLeft: 0
   TravelingParticle: {fileID: 3939361250881270103}
   ParticleMaterial: {fileID: 0}
