@@ -10,8 +10,8 @@ public class PathController : MonoBehaviour
     //Start and End locations for bezier curve
     //public Transform StartLocation, EndLocation;
 
-    public int CurveSegments = 5;
-    public float xVariance = 2f, yVariance = 2f;
+    public int CurveSegments = 3;
+    public float xVariance = .2f, yVariance = .2f;
 
     // Flipped if the left hand
     public bool isLeft = false;
