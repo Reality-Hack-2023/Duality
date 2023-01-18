@@ -1,5 +1,7 @@
 # Reality Hack 2023 - Table 42
 
+Try it out using the APK at (https://github.com/Reality-Hack-2023/Duality/blob/main/LetItGrowPublicExpo.apk)
+
 ## The Team
 
 - Linnette Martinez
